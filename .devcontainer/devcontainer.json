@@ -1,0 +1,20 @@
+{
+    "name": "Cloudfoundry Terrafrom Provider",
+    "dockerFile": "Dockerfile",
+    "extensions": [
+        "ms-vscode.go",
+        "davidanson.vscode-markdownlint",
+        "shardulm94.trailing-spaces",
+        "IBM.output-colorizer",
+        "GitHub.copilot",
+        "mhutchie.git-graph"
+    ],
+    "settings": {
+        "go.useLanguageServer": true
+    },
+    "mounts": [
+        "type=bind,source=${localWorkspaceFolder},target=/work",
+        "type=bind,source=/home/${localEnv:USER}/.ssh,target=/root/.ssh,readonly"
+      ],    
+    "postCreateCommand": "go mod download"
+}
